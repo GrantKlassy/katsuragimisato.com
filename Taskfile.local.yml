@@ -1,0 +1,23 @@
+version: "3"
+
+tasks:
+  dev:
+    desc: Start Astro dev server
+    cmds:
+      - pnpm dev
+
+  build:
+    desc: Build the site
+    cmds:
+      - pnpm build
+
+  preview:
+    desc: Preview the built site
+    cmds:
+      - pnpm preview
+
+  check:
+    desc: Repo-local checks (typecheck + format)
+    cmds:
+      - pnpm check
+      - pnpm format:check

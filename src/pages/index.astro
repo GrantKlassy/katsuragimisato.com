@@ -10,24 +10,40 @@ import "../styles/global.css";
     <title>katsuragimisato.com</title>
   </head>
   <body class="m-0 h-screen w-screen overflow-hidden bg-black text-white">
+    <img
+      id="misato-fallback"
+      src="/images/misato/misato1.png"
+      alt="Katsuragi Misato"
+      class="absolute inset-0 hidden h-full w-full object-cover opacity-90 [filter:contrast(1.05)_saturate(1.1)]"
+    />
     <canvas id="misato" class="block h-full w-full"></canvas>
     <div
-      class="pointer-events-none absolute inset-0 flex flex-col items-center justify-end p-12 font-mono"
+      class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-12 font-mono"
     >
-      <h1
-        class="text-5xl font-bold tracking-[0.3em] drop-shadow-lg md:text-7xl"
+      <a
+        href="https://wiki.evageeks.org/Misato_Katsuragi"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="pointer-events-auto transition hover:text-purple-200"
       >
-        KATSURAGI MISATO
-      </h1>
-      <p class="mt-3 text-sm tracking-[0.5em] text-purple-200/80">
-        NERV OPERATIONS DIRECTOR
-      </p>
+        <h1
+          class="text-5xl font-bold tracking-[0.3em] drop-shadow-lg md:text-7xl"
+        >
+          KATSURAGI MISATO
+        </h1>
+      </a>
     </div>
 
     <script>
-      import { mountMisatoScene } from "../lib/misato-scene";
+      import { isWebGLSupported, mountMisatoScene } from "../lib/misato-scene";
       const canvas = document.getElementById("misato") as HTMLCanvasElement;
-      if (canvas) mountMisatoScene(canvas);
+      const fallback = document.getElementById("misato-fallback");
+      if (canvas && isWebGLSupported()) {
+        mountMisatoScene(canvas);
+      } else {
+        canvas?.remove();
+        fallback?.classList.remove("hidden");
+      }
     </script>
   </body>
 </html>
