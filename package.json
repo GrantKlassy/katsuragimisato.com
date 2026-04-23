@@ -4,10 +4,14 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "check": "astro check",
+    "dev": "astro dev --root main",
+    "dev:main": "astro dev --root main",
+    "build": "astro build --root main && node archive/generate.mjs",
+    "build:main": "astro build --root main",
+    "build:archive": "node archive/generate.mjs",
+    "preview": "astro preview --root main",
+    "preview:archive": "pnpm build:archive && python3 -m http.server --directory archive/dist 4322",
+    "check": "astro check --root main",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

@@ -2,19 +2,34 @@ version: "3"
 
 tasks:
   dev:
-    desc: Start Astro dev server
+    desc: Run the WebGL art piece dev server (main/)
     cmds:
       - pnpm dev
 
   build:
-    desc: Build the site
+    desc: Build both sites (WebGL main + apache archive)
     cmds:
       - pnpm build
 
+  build:main:
+    desc: Build the WebGL art piece only (main/ -> main/dist)
+    cmds:
+      - pnpm build:main
+
+  build:archive:
+    desc: Build the apache-style archive only (archive/ -> archive/dist)
+    cmds:
+      - pnpm build:archive
+
   preview:
-    desc: Preview the built site
+    desc: Preview the built WebGL site (main/ on :4321)
     cmds:
       - pnpm preview
+
+  preview:archive:
+    desc: Build and serve the apache-style archive (archive/ on :4322)
+    cmds:
+      - pnpm preview:archive
 
   check:
     desc: Repo-local checks (typecheck + format)

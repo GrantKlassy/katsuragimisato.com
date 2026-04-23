@@ -10,13 +10,7 @@ import "../styles/global.css";
     <title>katsuragimisato.com</title>
   </head>
   <body class="m-0 h-screen w-screen overflow-hidden bg-black text-white">
-    <img
-      id="misato-fallback"
-      src="/images/misato/misato1.png"
-      alt="Katsuragi Misato"
-      class="absolute inset-0 hidden h-full w-full object-cover opacity-90 [filter:contrast(1.05)_saturate(1.1)]"
-    />
-    <canvas id="misato" class="block h-full w-full"></canvas>
+    <canvas id="webgl" class="block h-full w-full"></canvas>
     <div
       class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-12 font-mono"
     >
@@ -24,7 +18,7 @@ import "../styles/global.css";
         href="https://wiki.evageeks.org/Misato_Katsuragi"
         target="_blank"
         rel="noopener noreferrer"
-        class="pointer-events-auto transition hover:text-purple-200"
+        class="pointer-events-auto"
       >
         <h1
           class="text-5xl font-bold tracking-[0.3em] drop-shadow-lg md:text-7xl"
@@ -35,15 +29,9 @@ import "../styles/global.css";
     </div>
 
     <script>
-      import { isWebGLSupported, mountMisatoScene } from "../lib/misato-scene";
-      const canvas = document.getElementById("misato") as HTMLCanvasElement;
-      const fallback = document.getElementById("misato-fallback");
-      if (canvas && isWebGLSupported()) {
-        mountMisatoScene(canvas);
-      } else {
-        canvas?.remove();
-        fallback?.classList.remove("hidden");
-      }
+      import { mountTestScene } from "../lib/test-scene";
+      const canvas = document.getElementById("webgl") as HTMLCanvasElement;
+      if (canvas) mountTestScene(canvas);
     </script>
   </body>
 </html>
