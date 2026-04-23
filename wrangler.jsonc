@@ -1,5 +1,8 @@
 {
   "name": "katsuragimisato",
   "compatibility_date": "2026-04-22",
-  "pages_build_output_dir": "./main/dist",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": "./main/dist",
+  },
 }
