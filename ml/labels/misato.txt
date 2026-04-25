@@ -1,0 +1,133 @@
+# =============================================================
+#  MISATO SCREENTIME LABELS --- Neon Genesis Evangelion (1995)
+# =============================================================
+#
+#  HOW TO TYPE IN THIS FILE
+#  ------------------------
+#  Find the episode you're watching below (e.g. "## S01E03").
+#  Add one line per Misato appearance, in this shape:
+#
+#      START - END
+#
+#  Examples (any of these are fine, mix freely):
+#      01:42 - 02:55              # MM:SS
+#      05:11.5 - 05:34            # half-seconds OK if Misato cuts in/out
+#      1:21:03 - 1:21:30          # HH:MM:SS for movies / long episodes
+#
+#  Special directives (each on its own line, inside an episode block):
+#
+#      SKIP 00:00 - 01:35
+#          Exclude this region from training entirely. Use this for the
+#          OP, the ED, and the next-episode preview. Misato is in the OP
+#          every single episode --- without SKIP, the model would just
+#          memorize the OP and look great on metrics while learning
+#          nothing about the actual show.
+#
+#      DONE
+#          "I watched the whole episode." Without this line, untagged
+#          regions are treated as UNKNOWN and dropped from training.
+#          With it, untagged regions become CONFIRMED-NOT-MISATO and
+#          are used as negative examples. Add it once you've finished
+#          an episode.
+#
+#  Comments (lines starting with #) are ignored. Use them freely.
+#  Episode order doesn't matter. Do them in any order you want.
+#  An episode block with only `DONE` and no spans means
+#      "Misato never on screen this episode" --- that's a valid label.
+#
+#  WHAT COUNTS AS ON-SCREEN
+#  ------------------------
+#    YES  --- visible body, even partial: hand, back of head, reflection
+#    YES  --- a photograph of her shown on screen
+#    NO   --- voice only, body not visible (off-screen voice is a separate
+#           signal the model has to learn on its own)
+#    SKIP --- single-frame flashes (<~0.3s) in fast cuts; not worth the
+#           labeling noise. Wrap them in a SKIP region or just ignore.
+#
+#  PRECISION
+#  ---------
+#  Don't sweat it. The model trains on 2 fps samples (half-second
+#  resolution) and median-filters its predictions, so being off by a
+#  second on either end is invisible.
+#
+# =============================================================
+#  Type below.
+# =============================================================
+
+
+## S01E01 --- Angel Attack
+
+
+## S01E02 --- The Beast
+
+
+## S01E03 --- A Transfer
+
+
+## S01E04 --- Hedgehog's Dilemma
+
+
+## S01E05 --- Rei I
+
+
+## S01E06 --- Rei II
+
+
+## S01E07 --- A Human Work
+
+
+## S01E08 --- Asuka Strikes!
+
+
+## S01E09 --- Both of You, Dance Like You Want to Win!
+
+
+## S01E10 --- Magmadiver
+
+
+## S01E11 --- The Day Tokyo-3 Stood Still
+
+
+## S01E12 --- She Said, "Don't Make Others Suffer for Your Personal Hatred."
+
+
+## S01E13 --- Lilliputian Hitcher
+
+
+## S01E14 --- Weaving a Story
+
+
+## S01E15 --- Those Women Longed for the Touch of Others' Lips, and Thus Invited Their Kisses
+
+
+## S01E16 --- Splitting of the Breast
+
+
+## S01E17 --- Fourth Child
+
+
+## S01E18 --- Ambivalence
+
+
+## S01E19 --- Introjection
+
+
+## S01E20 --- Weaving a Story 2: Oral Stage
+
+
+## S01E21 --- He Was Aware That He Was Still a Child
+
+
+## S01E22 --- Don't Be
+
+
+## S01E23 --- Rei III
+
+
+## S01E24 --- The Beginning and the End, or "Knockin' on Heaven's Door"
+
+
+## S01E25 --- Do You Love Me?
+
+
+## S01E26 --- Take Care of Yourself

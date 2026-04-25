@@ -24,3 +24,9 @@ node_modules/
 .env.*.local
 *.pem
 *.key
+
+# ML --- large source video and reproducible artifacts
+assets/tv/
+ml/features/
+ml/models/
+
