@@ -26,9 +26,9 @@ One YAML file per labeled episode at `ml/labels/S01E01.yml`:
 episode: S01E01
 spans:
   - start: 00:01:23.500
-    end:   00:02:45.000
+    end: 00:02:45.000
   - start: 00:05:11.000
-    end:   00:05:34.000
+    end: 00:05:34.000
 ```
 
 Timestamps are `HH:MM:SS.mmm`, relative to the start of the episode file (no offset for OP/ED --- a span that lands inside the OP is fine, that's still Misato on screen). Spans must be non-overlapping and in order. Anything in a labeled episode that is **not** inside a span is treated as a confirmed negative.
@@ -83,7 +83,7 @@ audio_emb  (768-d wav2vec2-base) ─┘
 - Train on a single GPU if available, CPU if not --- features are precomputed so training is cheap (it's just an MLP).
 - Save best checkpoint by validation F1 to `ml/models/misato_<git-sha>.pt`.
 
-If frozen features underperform (val F1 < 0.8), the next move is to fine-tune the visual backbone end-to-end on sampled frames, *not* to make the head fancier.
+If frozen features underperform (val F1 < 0.8), the next move is to fine-tune the visual backbone end-to-end on sampled frames, _not_ to make the head fancier.
 
 #### 4. Inference (`predict.py`)
 

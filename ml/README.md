@@ -8,12 +8,12 @@ Open it in any editor. The format guide is at the top of the file. All 26 episod
 
 ## Where you don't type
 
-| Path | What | Who writes here |
-|---|---|---|
-| `scripts/` | Training + inference pipeline | Claude |
-| `predictions/` | Model's predicted Misato spans per episode | The trained model |
-| `features/` *(gitignored, created on first run)* | Cached frame + audio embeddings | `extract_features.py` |
-| `models/` *(gitignored, created on first run)* | Trained PyTorch checkpoints | `train.py` |
+| Path                                             | What                                       | Who writes here       |
+| ------------------------------------------------ | ------------------------------------------ | --------------------- |
+| `scripts/`                                       | Training + inference pipeline              | Claude                |
+| `predictions/`                                   | Model's predicted Misato spans per episode | The trained model     |
+| `features/` _(gitignored, created on first run)_ | Cached frame + audio embeddings            | `extract_features.py` |
+| `models/` _(gitignored, created on first run)_   | Trained PyTorch checkpoints                | `train.py`            |
 
 ## The plan
 

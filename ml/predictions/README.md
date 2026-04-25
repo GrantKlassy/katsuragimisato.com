@@ -7,10 +7,10 @@ episode: S01E03
 model: misato_<git-sha>.pt
 spans:
   - start: 00:01:23.500
-    end:   00:02:45.000
+    end: 00:02:45.000
     confidence: 0.94
   - start: 00:05:11.000
-    end:   00:05:34.000
+    end: 00:05:34.000
     confidence: 0.81
 ```
 
